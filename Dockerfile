@@ -23,5 +23,8 @@ WORKDIR /ml
 
 ENV PORT 8888
 EXPOSE 8888
+RUN mkdir -p /root/.jupyter/ && \
+  echo "c.NotebookApp.token = ''" > /root/.jupyter/jupyter_notebook_config.py
+
 CMD jupyter notebook --allow-root --ip=0.0.0.0 --port=$PORT --notebook-dir=/ml
 

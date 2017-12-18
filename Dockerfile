@@ -11,11 +11,11 @@ RUN apt-get update && \
     swig \
   && apt-get clean all
 
-RUN pip3 install --upgrade pip
-RUN pip3 install --upgrade jupyter matplotlib numpy pandas scipy scikit-learn
-RUN pip3 install --upgrade tensorflow
-RUN pip3 install --upgrade tensorflow-gpu
-RUN pip3 install --upgrade 'gym[all]'
+RUN pip3 install --no-cache-dir --upgrade pip
+RUN pip3 install --no-cache-dir --upgrade jupyter matplotlib numpy pandas scipy scikit-learn
+RUN pip3 install --no-cache-dir --upgrade tensorflow
+RUN pip3 install --no-cache-dir --upgrade tensorflow-gpu
+RUN pip3 install --no-cache-dir --upgrade 'gym[all]'
 
 RUN mkdir /ml
 ENV ML_PATH /ml
